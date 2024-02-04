@@ -56,7 +56,7 @@
   - `whenever a state-variable get updates/changes or modifies , react will re-render our component and quickly updates the UI(html code) as well`.
 - `as soon as i refresh my web-page(changed my state-variable) react will automatically re-render(refresh) that component very quickly and fast.React keeps you DATA_LAYER in sync with the UI_LAYER(html webpage)`
    - lets see how it(react) is doing this(above this which i have  written).
-   **1] reconciliation Algorithm(REACT-FIBER):**
+- `1] reconciliation Algorithm(REACT-FIBER)`
 
    - **virtual dom:**- it is representation of the actual DOM(html webpage or UI). 
      - virtual DOM is basically **react-element(objects). this object is basically react-virtual dom.**.
