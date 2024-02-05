@@ -44,6 +44,25 @@
   - import the useState()- `import {useState} from "react"`
   - state variable maintains the state of your application. maintains the state of your components.
   - eg- `const[ListOfRestaurant]=useState();`
+  - here ListOfRestaurant is a state_variable.
+  - how to change or set the value of this state_variable(her ListOfRestaurant) or state.
+  ```
+  const [listOfRest, setListOfRest] = useState("initial Value");
+  <!-- if want it empty -->
+  const[ListOfRest,setListOfRest]=useState([]);
+  // Update the value based on some condition or user interaction
+const handleUpdateList = () => {
+  setListOfRest("New Value");
+};
+
+// ...
+
+// Use the updated value in your component
+<button onClick={handleUpdateList}>Update List</button>
+  ```
+  - **here ListOfRest is a state-variable**
+  - **setListOfRest (updater function): This function is used to update the state variable listOfRest. When you want to change the value of listOfRest, you call this function with the new value as an argument. React will then re-render the component with the updated state. In functional components, using this updater function is the standard way to modify state.**
+  - **here the second setListOfRest is a function  which is use to update,set or chnage the value of the state_variable ListOfRest. basically this setListOfRest function is used to update the state.**
   - when you call `useState()`, **It will give you a state variable**, so how do you receive the state variable with the help of above syntax-`const [ListOfRestaurant]=useState();`
   - this is how you create a state variable.
   - this **ListOfRestaurant** is a state variable.(super-powerfull react variable).
