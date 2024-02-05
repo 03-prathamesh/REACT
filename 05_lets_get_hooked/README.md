@@ -84,7 +84,7 @@
     - `that is whenever there is any change in state_variable , REACT will find out the differenece between virtual DOM (old and updated) & it will RE_RENDER our components or It will Updates the V_DOM(updatess the HTML elements on the virtual_DOM(eg-updates 3 divb instead of 7 div in v_DOM)).`
 
   
-**this whole algorithm is known as reconciliation algorithm(REACT-FIBER)**
+**this whole algorithm(PROCESS) is known as reconciliation algorithm(REACT-FIBER)**
 - whenever something changes on the UI , it is known as **reconciliation**.
 
 
