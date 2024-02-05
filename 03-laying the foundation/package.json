@@ -1,0 +1,28 @@
+{
+  "name": "la",
+  "version": "1.0.0",
+  "description": "**1]React-Element:**\r - in js , **react element is just a OBJECT** , you can see it in the conssole\r - React Element is a lightweight, immutable **object** that represents a single element in the virtual DOM (Document Object Model). React Elements are the building blocks of React applications, and they describe what you want to see on the screen.\r - A React Element is typically created using JSX syntax or the React.createElement function. It describes what the DOM (broweser's DOM or html Webpage) should look like, and React takes care of updating the actual DOM efficiently.\r - React element is **not a html element**\r - react element at the end is **object**\r - **React Elements are objects that describe what you want the UI to look like.**\r - React Elements are created using `**JSX**` or the `**React.createElement function**`.\r - **when we render this React-element to DOM(on WEBPAGE or BROWSER), It become HTML-element(HTML)**\r - Rendering to the DOM in React means updating the actual HTML on a web page based on changes in your React application's virtual representation (virtual DOM)----------------------------------------------------**Document: Refers to an HTML or XML document.Object: Represents each element or piece of content in the document.**",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/03-prathamesh/REACT.git#main"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/03-prathamesh/REACT/issues"
+  },
+  "homepage": "https://github.com/03-prathamesh/REACT/tree/main#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

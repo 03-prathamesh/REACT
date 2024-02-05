@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+
+
+
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- after including this 2 , our project now has the REACT inside it
+      We have injected REACT into out project 
+    THIS IS THE FIRST METHOD TO INCLUDE REACT IN OUR PROJECT by getting CDN link
+This are the 2 links where react code is HOSTED-->
+
+<script>
+    // Now lets create the first react program
+        const heading=React.createElement("h1",{},"First react Code");
+        const root=ReactDOM.createRoot(document.getElementById("root"));
+        root.render(heading);
+</script>
+
+</body>
+
+</html>
