@@ -80,7 +80,12 @@
 }
 
 .Filter-btn{
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    color: black;
+    background-color: yellow;
+    border: none;
+    font-weight: bold;
+    border: 1px solid black;
     padding: 5px;
     border-radius: 10px;
    /* text-align: center; give it to its parent not to him*/
@@ -88,6 +93,11 @@
    margin: 10px;
 }
 
+
+.Filter-btn:hover{
+    background-color: rgb(243, 243, 6);
+    cursor: pointer;
+}
 .filter{
     /* margin: 0 auto; */
     /* text-align: center; */
