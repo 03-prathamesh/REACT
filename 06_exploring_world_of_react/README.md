@@ -76,6 +76,31 @@ if(listOfRest.length===0){
 - `whenever state_variable get updates or changes or modified, react triggers a reconciliations cycle that is means react finds the diff between older v-dom of body component and new vdom of body()component(let say we defined useState() in body component) with the help of diff -algo and it see that input value is chnages and it updates input value and then it(react) re-render that whole component or calls that component again(where useState() is defined here body) again on the UI(html webpage) `
 - react is re-rendering whole body component in this example, but it is updating only inpput-box value inside the dom. thats why react is considered to be the best when it comes to DOM manipulation, or react do dom manipulation very efficientlyy , quicky and fastly.because it exactly know what to change , and it update or change that thing and refreshes and re-renders(that means that component is getting called and executed again and again) the whole component( where that useState() or state-variable is defined.) on the UI(html web-page). `means react update the changes in that component then it generate(re-create) the updated JSX (JavaScript XML) that represents the UI for that component and re-render that component again on the UI(HTML webpage)`.
 - `When React re-renders a component, it means that the component's render function is called again to generate the updated JSX (JavaScript XML) that represents the UI for that component. This happens in response to changes in the component's state or props.`
+- consider exaample: lets consider our project example , we use useState() for `top-rated-restaurant` button, whenever we click on button useStates 2 parameter( which is the function-setFilteredRestaurant) will change the value of useStates state_variable(1st parameter-filteredRestaurant), so initial value of state-variable is 20 restaurant(res-cards-info and images of every rest) and when we click on button then function(2 nd parameter) willl change or modifies the value of state-variable to 3 restaurant(which is average>4).
+```
+const[filteredRestaurant,setFilteredRestaurant]=useState(jsonData);
+
+//lets say it this filteredRestaurant state-variable initially containt all 20 restaurant (data which we fetch from API). so initially this component containt 20 restaurant in UI.
+
+```
+![Alt Text](https://raw.githubusercontent.com/03-prathamesh/REACT/main/06_exploring_world_of_react/images/im1.png)
+
+```
+<button
+                className="Filter-btn"
+                onClick={()=>{
+                  const filtered_list=listOfRest.filter(
+                     (restsss)=>restsss.info.avgRating >= 4.5
+                  );
+                  setFilteredRestaurant(filtered_list);
+                }}
+                >Top-Rated Restuarants</button>
+
+ //now we are updating, modifying  or changing the value of state-variabel or assigning new value to the  filteredRestaurant with the help of setFilteredRestaurant function, now it will containt only the restaurant who has rating greater than 4.here only 7 res has greate than 4 ratings.
+```
+![Alt Text](https://raw.githubusercontent.com/03-prathamesh/REACT/main/06_exploring_world_of_react/images/img2.png)
+       react first finds(identifies) and updates the changes of this res-container components then  this react create and generates whole  jsx of this res-container component again with updated values(jsx) & this  whole res-container component  get re-render on the UI again(even if theere is one change in that component , whole component get re00render on the UI again)  with the updated restaurants which has greater then 4 ratings
+
 - this is how the reconciliation-cycle process works or whole render cycle works
 - thats why react is s fast and quicky renders component on UI.`react does efficinent rendering process , efficient DOM-manipulation very fastly.`
 
