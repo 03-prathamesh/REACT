@@ -72,5 +72,13 @@ if(listOfRest.length===0){
 - virtual dom is object representation of jsx(actual-dom)
 
 - `whenever state_variable get updates or changes or modified, react triggers a reconciliations cycle that is means react finds the diff between older v-dom of body component and new vdom of body()component(let say we defined useState() in body component) with the help of diff -algo and it see that input value is chnages and it updates input value and then it(react) re-render that whole component(where useState() is defined here body) again on the UI(html webpage) `
-- react is re-rendering whole body component in this example, but it is updating only inpput-box value inside the dom
+- react is re-rendering whole body component in this example, but it is updating only inpput-box value inside the dom. thats why react is considered to be the best when it comes to DOM manipulation, or react do dom manipulation very efficientlyy , quicky and fastly.because it exactly know what to change , and it update or change that thing and refreshes and re-renders(that means that component is getting called and executed again and again) the whole component( where that useCase() or state-variable is defined.) on the UI(html web-page).
+- this is how the reconciliation-cycle process works or whole render cycle works
 - thats why react is s fast and quicky renders component on UI.`react does efficinent rendering process , efficient DOM-manipulation very fastly.`
+
+
+**More About useState():**
+- useState() hook is used to create **state-variable**
+- whenever your state-variable changes(update or modified), react will re-render the component where useState() is defined.
+- 
+
