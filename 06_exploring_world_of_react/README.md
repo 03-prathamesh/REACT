@@ -99,7 +99,7 @@ const[filteredRestaurant,setFilteredRestaurant]=useState(jsonData);
  //now we are updating, modifying  or changing the value of state-variabel or assigning new value to the  filteredRestaurant with the help of setFilteredRestaurant function, now it will containt only the restaurant who has rating greater than 4.here only 7 res has greate than 4 ratings.
 ```
 ![Alt Text](https://raw.githubusercontent.com/03-prathamesh/REACT/main/06_exploring_world_of_react/images/img2.png)
-       react first finds(identifies) and updates the changes of this res-container components then  this react create and generates whole  jsx of this res-container component again with updated values(jsx) & this  whole res-container component  get re-render on the UI again(even if theere is one change in that component , whole component get re00render on the UI again)  with the updated JSX(which represent ui of that component) ,here 4 divs( restaurants which has greater then 4 ratings)
+       react first finds(identifies) and updates the changes of this res-container components then  this react create and generates whole  jsx of this res-container component again with updated values(jsx) & this  whole res-container component  get re-render on the UI again(even if theere is one change in that component , whole component get re00render on the UI again)  with the updated JSX(which represent ui of that component) ,here 4 divs only (means now this res-container component will containt only 4 divs not 20 divs)( restaurants which has greater then 4 ratings)
 
 - this is how the reconciliation-cycle process works or whole render cycle works
 - thats why react is s fast and quicky renders component on UI.`react does efficinent rendering process , efficient DOM-manipulation very fastly.`
