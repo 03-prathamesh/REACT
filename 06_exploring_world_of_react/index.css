@@ -75,8 +75,10 @@
 .res-container{
     display: flex;
     gap: 27px;
-    width: 100vw;
+    /* width: 100vw; */
     flex-wrap: wrap;
+    /* justify-content: center; */
+    margin: 0 auto;
     /* border: 2px solid black; */
 }
 
@@ -102,4 +104,31 @@
 .filter{
     /* margin: 0 auto; */
     /* text-align: center; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* border: 2px solid black; */
+    gap: 10px;
+}
+
+.Shimmer-Container{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-wrap: wrap;
+    /* border: 2px solid black; */
+    margin-top: 50px;
+    justify-content: center;
+    /* gap: 10px; */
+    gap: 27px;
+
+    
+}
+
+.Shimmer-cards{
+  width: 200px;
+  height: 260px;
+  background-color: #F0F0F0;
+  /* margin: 1px; */
+  /* margin-top: 10px; */
 }

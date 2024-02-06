@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
-import restaurants from "../utils/mockData";
+// import restaurants from "../utils/mockData"; now we no longer need this mock data because we have LIVE data of swiggy through its API
 import { useState, useEffect  } from "react";
+import Shimmer from "./Shimmer";
 
 
 
@@ -10,7 +11,11 @@ const Body=()=>{
   //local state variable(listOfRest).
 //   we can create state_variable using Use_state(); 
 // setListOfRest is special state_variable in react ,
-   const [listOfRest,setListOfRest]=useState(restaurants);
+   const [listOfRest,setListOfRest]=useState([]);  //intitally ListOfRest if empty.
+
+   const [searchText,setSearchText]=useState("");
+
+   const[filteredRestaurant,setFilteredRestaurant]=useState([]);
 
 
    useEffect(()=>{
@@ -22,10 +27,23 @@ const Body=()=>{
          //from our local host we are calling swiggys API
          //this fetch will return us promise and then we will resolve this promise with the help f aync ans await instead of .then() and .catch() method
          const json=await data.json();
-         console.log(json);
+         // console.log(json);
 
-         setListOfRest(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);  //we will get the live data of swiggy into our application
+         setListOfRest(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);  //we will get the live data of swiggy into our application(this is the live data coming from swiggy API)
+         setFilteredRestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
     }
+
+
+    //this is known as "CONDITIONAL-RENDERING"
+    if(listOfRest.length===0){
+      return (
+      // <h1>Loading............</h1>
+         <Shimmer/>
+      )
+    }
+    else{
+
+    
 
 
 
@@ -34,11 +52,27 @@ const Body=()=>{
        <div className="body">
    
             <div className="filter">
+                <div className="searchs">
+                  <input type="text"  className="s-box" value={searchText} onChange={(e)=>{
+                     // filter the restaurant cards & update the UI
+                     setSearchText(e.target.value);
+                     // console.log(searchText);
+
+                  }}/> 
+                  <button onClick={()=>{
+                     // console.log(searchText);
+                     const filterRestaurants=  listOfRest.filter(
+                        // (res)=>res.info.name===searchText it  exact name 
+                        (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                     )
+                     setFilteredRestaurant(filterRestaurants);
+                  }}>Search</button>
+                </div>
                <button
                 className="Filter-btn"
                 onClick={()=>{
                   const filtered_list=listOfRest.filter(
-                     (restsss)=>restsss.info.avgRating > 4
+                     (restsss)=>restsss.info.avgRating >= 4.5
                   );
                   setListOfRest(filtered_list);
                 }}
@@ -72,8 +106,8 @@ const Body=()=>{
                  {/* <RestaurantCard restdata={restaurants[9]}/> */}
 
                  {
-                  listOfRest.map((rest)=>(
-                     <RestaurantCard restdata={rest}/>
+                  filteredRestaurant.map((rest)=>(
+                     <RestaurantCard  key={rest.id} restdata={rest}/>
                   ))
                  }
    
@@ -86,6 +120,7 @@ const Body=()=>{
    
    
     );
+               }
    };
 
 
