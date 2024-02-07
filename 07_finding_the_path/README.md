@@ -88,3 +88,4 @@ const appRouter= createBrowserRouter([
 ```
    root.render(<RouterProvider route={appRouter} />);
 ```
+- here we are provideing our appRouter configuration to the RouterProvider.
