@@ -8,7 +8,7 @@ import Body  from "./components/Body";
 import RestaurantCard from "./components/RestaurantCard";
 import About from "./components/About";
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
-
+import Error from "./components/Error";
 
 // lets create a functional component
 
@@ -68,9 +68,11 @@ const appRouter=createBrowserRouter([
 
     {
         path:"/",
-        element:<AppLayout/>
+        element:<AppLayout/>,
+        errorElement:<Error/>         //react-router-dom library gives up this feature to represent error message or page   
 
     },
+    // we have configured our About-us page also
     {
 
         path:"/about",
