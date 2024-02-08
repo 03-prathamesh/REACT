@@ -89,3 +89,13 @@ const appRouter= createBrowserRouter([
    root.render(<RouterProvider route={appRouter} />);
 ```
 - here we are provideing our appRouter configuration to the RouterProvider.
+
+**More about packages(libraries or dependency)-**
+- npm provides again one more imp library or package which is `react-router-dom`, we installed it already.
+- `in react, each package has or provdes predefined-COMPONENTS or UTILITIES. these are predefined in that library itself. if we want to use it , we need to import that components or utilities from that library into our App.js(or wherever you want to use it).`
+- in our example, `In react-router-dom library, the BrowserRouter component is not created using a function called createBrowserRouter. Instead, it's a predefined component provided by the library itself. When you import BrowserRouter from react-router-dom, you're importing a component(for use in your file or app) that is already implemented(defined or created) within the library.`
+- **if we want to use that component, we dont need to define again , we just need to import it in our appl, like our component are defined in component folder and we import it to use in any another file , this is same but diff is this component are defined in its library itseld(here react-router-dom), so to use it we need to import it(eg-react-router-dom libries's createBrowserRouter component) from that library into our file or application(wheere we want to use it)**
+```
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
+```
+- `npm has all the libraries(packages) installed in it, npm stores this libraries on the local remote-server or repositories, whenever you want it npm fetches from that remote server(database where it has stored) and installed it in your application(react-appl)`

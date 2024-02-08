@@ -6,7 +6,8 @@ import im3 from "../images/kfc.webp"
 import Header  from "./components/Header";
 import Body  from "./components/Body";
 import RestaurantCard from "./components/RestaurantCard";
-
+import About from "./components/About";
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
 
 
 // lets create a functional component
@@ -54,11 +55,31 @@ const AppLayout=()=>{
         <div className="app">
            <Header/>
            <Body/>
+           {/* <About/> */}
         </div>
 
     );
 
 };
 
+
+
+const appRouter=createBrowserRouter([
+
+    {
+        path:"/",
+        element:<AppLayout/>
+
+    },
+    {
+
+        path:"/about",
+        element:<About/>
+    }
+
+]);
+
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
+// root.render(<AppLayout/>);
+
+root.render(<RouterProvider router={appRouter}/>);
