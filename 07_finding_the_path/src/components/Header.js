@@ -1,6 +1,6 @@
 import {useState} from "react";
 import img1 from "../../images/logo.jpg";
-
+import { Link } from "react-router-dom";
 
 const Header=()=>{
 
@@ -15,10 +15,10 @@ const Header=()=>{
            
 
             <div className="links">
-                  <li><link   to="">home</link></li>
-                  <li><link  to="/about">about</link></li>
-                  <li><link href="">Sign-IN</link></li>
-                  <li><link href="">Cart</link></li>
+                  <li><Link   to="/">home</Link></li>
+                  <li><Link  to="/about">about</Link></li>
+                  {/* <li><link href="">Sign-IN</link></li>
+                  <li><link href="">Cart</link></li> */}
                   <li><button onClick={()=>{
                      if(btnChange==="login"){
                         setBtnChange("logout");
