@@ -70,7 +70,7 @@ if(listOfRest.length===0){
     }
 ```
 
-**more about useCase():**
+**more about useState():**
 - virtual dom is object representation of jsx(actual-dom)
 
 - `whenever state_variable get updates or changes or modified, react triggers a reconciliations cycle that is means react finds the diff between older v-dom of body component and new vdom of body()component(let say we defined useState() in body component) with the help of diff -algo and it see that input value is chnages and it updates input value and then it(react) re-render that whole component or calls that component again(where useState() is defined here body) again on the UI(html webpage) `
