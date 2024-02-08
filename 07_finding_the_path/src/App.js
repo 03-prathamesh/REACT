@@ -7,7 +7,8 @@ import Header  from "./components/Header";
 import Body  from "./components/Body";
 import RestaurantCard from "./components/RestaurantCard";
 import About from "./components/About";
-import { createBrowserRouter,RouterProvider } from "react-router-dom";
+import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+// these all 3 are components provides by the react-router-dom library
 import Error from "./components/Error";
 
 // lets create a functional component
@@ -54,7 +55,9 @@ const AppLayout=()=>{
     return (
         <div className="app">
            <Header/>
-           <Body/>
+           <Outlet/>
+           {/* you will not see this outlet in your HTML, outler will be replace by the components according to the ROUTS */}
+           {/* <Body/> */}
            {/* <About/> */}
         </div>
 
@@ -63,23 +66,61 @@ const AppLayout=()=>{
 };
 
 
+// normal-routing
+// const appRouter=createBrowserRouter([
+
+//     {
+//         path:"/",
+//         element:<AppLayout/>,
+//         errorElement:<Error/>         //react-router-dom library gives up this feature to represent error message or page   
+
+//     },
+//     // we have configured our About-us page also
+//     {
+
+//         path:"/about",
+//         element:<About/>
+//     }
+
+// ]);
+
+
+// children-routing
 
 const appRouter=createBrowserRouter([
 
-    {
-        path:"/",
-        element:<AppLayout/>,
-        errorElement:<Error/>         //react-router-dom library gives up this feature to represent error message or page   
+        {
+            path:"/",
+            element:<AppLayout/>,
+            errorElement:<Error/>,         //react-router-dom library gives up this feature to represent error message or page   
+            children:[
 
-    },
-    // we have configured our About-us page also
-    {
 
-        path:"/about",
-        element:<About/>
-    }
+                {
+                   path:"/",
+                   element:<Body/>,
 
-]);
+
+                },
+
+                {
+                    // if i go to about page, this <ABout/> will go and fill that OUTLET which we used(defined) or called in the Applayout(parent)component
+                    
+                    path:"/about",
+                    element:<About/>
+                }
+
+
+
+            ],
+            
+        },
+        // we have configured our About-us page also
+        
+    
+    ]);
+
+
 
 const root=ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<AppLayout/>);

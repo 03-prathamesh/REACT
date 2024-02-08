@@ -15,10 +15,10 @@ const Header=()=>{
            
 
             <div className="links">
-                  <li><a  href="">home</a></li>
-                  <li><a  href="">about</a></li>
-                  <li><a href="">Sign-IN</a></li>
-                  <li><a href="">Cart</a></li>
+                  <li><link   to="">home</link></li>
+                  <li><link  to="/about">about</link></li>
+                  <li><link href="">Sign-IN</link></li>
+                  <li><link href="">Cart</link></li>
                   <li><button onClick={()=>{
                      if(btnChange==="login"){
                         setBtnChange("logout");

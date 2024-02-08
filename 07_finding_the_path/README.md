@@ -99,3 +99,33 @@ const appRouter= createBrowserRouter([
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 ```
 - `npm has all the libraries(packages) installed in it, npm stores this libraries on the local remote-server or repositories, whenever you want it npm fetches from that remote server(database where it has stored) and installed it in your application(react-appl)`
+
+**react-router-dom library(package or dependency) also provides functionality such as `errorElement` which is used to display the error page when user type wrong URL.**
+
+**react-router-dom gives us an access to IMP Hook(which is a function but every hook has different and specific purpose)-`useRouteError()`:**
+- this is the hook which is given to use by **react-router-dom library**
+- this hook gives the more information about the error.
+- with the help of this hook , we can display better error message on our webpage(UI) .it can be **routeFail Error**, **network erro**.
+- how to import it in error component:
+```
+   import{useRouteError} from "react-router-dom";
+```
+- `so we can read the messages using useRouteError hook and we can shor the specific detail to the user about the error`
+- how to use it:
+```
+    const err=useRouteError(); 
+    //this is how we can call this hook
+    //this err is OBJECT
+```
+- **now it will give us all the error in our path, react-router will catch and give it to us as a form of OBJECT**
+
+
+**Link-component provided by react-router-dom library:**
+- how to import it,
+`import {link} from "react-router-dom";`
+- link component exactly work as the same as **anchor tag**
+- `<link to="/about">About-me</link>`
+- `so link-component is used to redirect(navigate) to the page(URL) without Reloading the Page.`
+- when i will go to the about-me page, my page will not get refreshed.my whole page will not refresh
+- link will do not `reload(refresh)` the page.
+- `whenever you are navigating to a different route(URL), so always use a link component, it will naviagate you to the spec page without reloading or refreshing the whole page.`
