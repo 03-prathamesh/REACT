@@ -129,3 +129,13 @@ import { createBrowserRouter,RouterProvider } from "react-router-dom";
 - when i will go to the about-me page, my page will not get refreshed.my whole page will not refresh
 - link will do not `reload(refresh)` the page.
 - `whenever you are navigating to a different route(URL), so always use a link component, it will naviagate you to the spec page without reloading or refreshing the whole page.`
+- thats why our react application is known as `single page application.`
+
+**Routing-**
+- `In React, routing refers to the process of determining which UI components to display based on the URL or user navigation. It allows you to create single-page applications (SPAs) where different parts of your application's UI are rendered based on the URL, without having to reload the entire page.`
+
+**2-types of Routing in web-application**
+- 1]`client-side routing`- we just dont refresh our page and route(nevigate) to the spec page or URL(when i click in about-us it just loads that component(about component)), it does not make any network call.
+- i am not fetching a page, thats why this is called as "client-side routing."
+- we are implementing client-side routing in reacct, so via client side routing our react-application is single page.
+- 2]`server-side routing`- server-side routing means you make a network call(by clicking on about anchor tag(to load that page)) & about.html page(consider example) coming from the server by refreshing your whole page and render on to your UI. this is sserver side routing.
