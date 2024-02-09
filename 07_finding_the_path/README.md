@@ -48,6 +48,9 @@
 - try to call the hooks on the top of the component's body.so that you dont have lot of inconsistencies in your code. it helps react to understand it properly.
 - `never use or create your useState() hook in IF_ELSE or LOOPS`.
 
+**useRouter() hook:**
+- this hook used in providing the exact information about the routing-errro(if someone typed wrong URL).
+
 
 ### ROUTING-how to creates different ROUTS in our REACT-APPLICATION(how we can create multiple URL routs for creating different webpage).
 
