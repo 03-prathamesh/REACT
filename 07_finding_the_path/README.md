@@ -127,6 +127,7 @@ import { createBrowserRouter,RouterProvider } from "react-router-dom";
 - how to import it,
 `import {link} from "react-router-dom";`
 - link component exactly work as the same as **anchor tag**
+- this link tag at the end in converted to anchor tag and render it on UI(in htmlit containt  anchor tag instead of Link tag)
 - `<link to="/about">About-me</link>`
 - `so link-component is used to redirect(navigate) to the page(URL) without Reloading the Page.`
 - when i will go to the about-me page, my page will not get refreshed.my whole page will not refresh
