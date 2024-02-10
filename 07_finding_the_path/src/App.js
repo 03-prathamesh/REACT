@@ -10,7 +10,7 @@ import About from "./components/About";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 // these all 3 are components provides by the react-router-dom library
 import Error from "./components/Error";
-
+import Restaurant_menu from "./components/Restaurant_menu";
 // lets create a functional component
 
 
@@ -106,9 +106,14 @@ const appRouter=createBrowserRouter([
                 {
                     // if i go to about page, this <ABout/> will go and fill that OUTLET which we used(defined) or called in the Applayout(parent)component
                     
-                    path:"/about",
+                    path:"/about",  
                     element:<About/>
                 }
+                ,{
+
+                    path:"restaurants/:w",
+                    element:<Restaurant_menu/>
+                },  
 
 
 

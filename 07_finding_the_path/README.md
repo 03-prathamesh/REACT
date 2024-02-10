@@ -142,3 +142,10 @@ import { createBrowserRouter,RouterProvider } from "react-router-dom";
 - i am not fetching a page, thats why this is called as "client-side routing."
 - we are implementing client-side routing in reacct, so via client side routing our react-application is single page.
 - 2]`server-side routing`- server-side routing means you make a network call(by clicking on about anchor tag(to load that page)) & about.html page(consider example) coming from the server by refreshing your whole page and render on to your UI. this is sserver side routing.
+
+**dynamic-routing:**
+- `In React Router, the : symbol is used to indicate a dynamic parameter in the URL path. When you define a route with a path like /user/:id, it means that the part of the URL after /user/ is dynamic and can be anything.`
+- for example-/user/123 will match
+- /user/abc will also match
+- `The :id syntax tells React Router to capture whatever value is in that part of the URL and pass it as a parameter to the component specified in the route.`
+- you can give any name after this :. like :resID,or id 

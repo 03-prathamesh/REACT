@@ -10,7 +10,7 @@ const RestaurantCard=(props)=>{
 // ------------------DESTRUCTURING ON THE FLY ------------------------------------------------------
 // const{restName,cuisine}=props;
 // now instead of using props.restName you can directly use restName to access its value for the perticular component
-const {restdata}=props;
+const {restdata,key}=props;
 
 // const {
 //    cloudinaryImageId
@@ -36,6 +36,7 @@ return (
         <h2>{restdata.info.name}</h2>
          <h4>{restdata.info.avgRating} Stars</h4>
          <h4>{restdata.info.costForTwo}</h4>
+          <h4>{restdata.id}Hi</h4>
         <p>{restdata.info.cuisines.join(", ")}</p>
 
     
