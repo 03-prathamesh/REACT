@@ -149,3 +149,17 @@ import { createBrowserRouter,RouterProvider } from "react-router-dom";
 - /user/abc will also match
 - `The :id syntax tells React Router to capture whatever value is in that part of the URL and pass it as a parameter to the component specified in the route.`
 - you can give any name after this :. like :resID,or id 
+- **How to read this dynamic routing info or value or data(:resid) which is typed by user(in URL)**
+  - `useParams Hook` is used to read or access the info or data of this dynamic routing.
+  - 
+  ```
+      // const params=useParams();  it will give the valur of :w(what user has typed(eg 123) in url for this dynamic routing)
+    //    const params=useParams();
+    //console.log(params.w);
+    //we are diretly destructuring on fly, instead of writing params.w i can write direcyly w to access this
+    const {w}=useParams();
+    console.log(w);
+ 
+    // lets pss this w in URL
+
+  ```

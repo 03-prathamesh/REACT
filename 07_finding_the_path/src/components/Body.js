@@ -2,7 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 // import restaurants from "../utils/mockData"; now we no longer need this mock data because we have LIVE data of swiggy through its API
 import { useState, useEffect  } from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -107,7 +107,8 @@ const Body=()=>{
 
                  {
                   filteredRestaurant.map((rest)=>(
-                     <RestaurantCard  key={rest.id} restdata={rest}/>
+                     <Link key={rest.info.id} to={"/restaurants/"+rest.info.id}><RestaurantCard   restdata={rest}/></Link>
+                     
                   ))
                  }
    

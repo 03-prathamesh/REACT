@@ -111,7 +111,7 @@ const appRouter=createBrowserRouter([
                 }
                 ,{
 
-                    path:"restaurants/:w",
+                    path:"/restaurants/:w",       //here : is used for dynamic routing after : , whetever you type it will redirect to the Restaurant_menu page or component, and instead of w you can use any variable_name 
                     element:<Restaurant_menu/>
                 },  
 
