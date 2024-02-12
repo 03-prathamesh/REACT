@@ -101,4 +101,30 @@ const[count2]=useState(1);  //initital valie of count2
     <h3>{count2}</h3>
 
 ```
-- this is how we create multiple state-variables in class and functinal based components
+- this is how we create multiple state-variables in class and functinal based components.
+
+**lets see how we can update the state-variables:**
+- in functional-components:
+```
+    const [count,setCount]=useState(0);
+    #here setCount is a function which is used to update(change the value of )the state-variable(count).
+    setCount(3);
+    #now the value of count(state-variable)is 3
+```
+- in class-based components:
+```
+      this.state={
+         count:0,
+         count2:2,
+
+      };
+
+      #react gives a special function- this.setState() to update(change) the value of state-variable,inside this this.setState() we will pass an OBJECT, this object will containt the updated value of your state-variable.
+      #lets update the value of count(state-variable of class-based component)
+      
+
+      this.setState({   //{} this is object inside setState()
+          count:this.state.count+1;
+      })
+
+```
