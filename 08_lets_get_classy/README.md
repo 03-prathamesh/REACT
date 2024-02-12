@@ -127,4 +127,10 @@ const[count2]=useState(1);  //initital valie of count2
           count:this.state.count+1;
       })
 
+      
+     
 ```
+
+
+ - `whenever i am changing the value of state-variable(whenever i am clicking on the increase-count button),react will just update(change) the specific portion of HTML by finding the difference between the virtual DOM and actual DOM and does not touch any other existing code (just update the code which is changed) and then react will re-render(loads) the whole component on The Dom(webpage)`. this is how react works behind the scenes.
+ - whenever this change button will click , react will trigger that reconciliation process, it wil find the diff between DOMs, update the state-variable and it will re-render the whole component , this is reconciliation process. thats how react will work
