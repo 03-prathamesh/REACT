@@ -133,4 +133,67 @@ const[count2]=useState(1);  //initital valie of count2
 
 
  - `whenever i am changing the value of state-variable(whenever i am clicking on the increase-count button),react will just update(change) the specific portion of HTML by finding the difference between the virtual DOM and actual DOM and does not touch any other existing code (just update the code which is changed) and then react will re-render(loads) the whole component on The Dom(webpage)`. this is how react works behind the scenes.
- - whenever this change button will click , react will trigger that reconciliation process, it wil find the diff between DOMs, update the state-variable and it will re-render the whole component , this is reconciliation process. thats how react will work
+ - whenever this change button will click , react will trigger that reconciliation process, it wil find the diff between DOMs, update the state-variable and it will re-render the whole component , this is reconciliation process. thats how react will work.
+
+
+**alternate syntax of class-based component**
+```
+ //instead of doing React.Component you can desteuctor like following and use only Component
+     import {component} from "react";
+     Class About extends Component{
+
+         render(){
+
+             return;
+         }
+     }
+
+```
+
+**Lifecycle of React Class-Based Components:(how class-based component works)**
+- loaded (updated, render) on webpage means `Mounted ` on webpage. so lets see how this class-based components get MOUNTED(LOADED) on the webpage.
+-  when the class-based component get called (instantiated)or loaded on the  webpage(your application), `its constructor first gets called`. the first thing when the class loads is `constructor is called.`
+- once the constructor is called then  the `render() is called`.
+
+
+
+**class-based component has one more method like render() method and constructor which is ComponentDidMount()**-
+- this is another method which react-class based components gives to us.
+-  `so basically when class-based component is loaded(or get called), constructor of that first get called or executed , then its render method is called, then once this class-based component MOUNTED(RENDER OR LOADED) on the DOM Or webpage or UI, then this componentDIdMount is called or get executed`
+
+- **how class-based component work(lifecycle of class based components)**
+  - `constructor` get called 
+  - `render() method` called or executed
+  - `ComponentDidMount` whenever this class based component get render on the UI or DOM then this method get called.
+  - in this order this functions get called or class-bassed component  get loaded or rendered onto the DOM.
+
+**Parent-child relationship in class-based component**
+- lets see in what order they gets executed
+```
+   - Parent constructor will be called or get executed first
+   - parent render() method get called or executed- 
+   - child constructor
+   - child render
+   - child component did Mounted- once the rendeting of child class based component get fingished on the DOM (once the class-based component has been mounted on the DOM)then this get called
+   - parent component did mount
+```
+
+**react class-based component Lifecycle when you have more than one childrens or siblings (in which order this lifecycle works):**
+```
+    - parent constructor
+    - parent render()
+    - firstChild constructor
+    - firstChild render()
+    - secondChild constructor
+    - secondChild render()
+    - firstChildComponent Did Mount
+    - SecondChildComponent Did Mount
+    - ParentComponent Did Mount
+```
+
+**Use of componentDidMount()**
+- there are some things that we do once the component(class-based component)get render(loaded) onto the DOM (UI) or webpage(once the component mounted successfully on the DOM)
+- `it is mainly use to make the API calls` because the component get render on the dom first  quickely then we make the API calls  and then render the data.
+- i want to render the class-based component as fast(quickly) as possible then make the API call and then fill the data or render the data . this is the reason we make API calls in the componentDidMount.
+
+   
