@@ -194,6 +194,22 @@ const[count2]=useState(1);  //initital valie of count2
 **Use of componentDidMount()**
 - there are some things that we do once the component(class-based component)get render(loaded) onto the DOM (UI) or webpage(once the component mounted successfully on the DOM)
 - `it is mainly use to make the API calls` because the component get render on the dom first  quickely then we make the API calls  and then render the data.
-- i want to render the class-based component as fast(quickly) as possible then make the API call and then fill the data or render the data . this is the reason we make API calls in the componentDidMount.
+- i want to render the class-based component as fast(quickly) as possible then make the API call and then fill the data(inside that component) or render the data . this is the reason we make API calls in the componentDidMount.
+
+**2 phases of react:**
+ - lifecycle of react
+
+ - in react when the component is MOUNTED(RENDERED OR LOADED) on the DOM or UI or webpage , it is mounted in 2 phases:
+  
+  ```
+  -1]Render-Phase
+  -2]Commit-phase
+  ```
+  - in render() , react triggers the reconsiliation process and updates(renders) whole component on to the DOM
+  - react is fast because react has 2 phases,
+  - `render phase has constructor and render() method.`react is batching up the render-phase for multiple children
+  - `in commit-phase react actually updates the DOM(re-renders the whole component on UI by updating the changes) and calls the (execute)the componentDidMount(component did mount is called in this phase)`
+  - components get updated on UI or DOM  (dom updates) in commit-phase.react is first doing the render-phase for all the children components then do the commit phase for all the components
+  - `after all the render phase of all the child as well as parent component get happened and then the commit phase get happened. THIS IS THE OPTIMIZATION OF REACT. this process helps react to optimize the performance of REACT-APPLICATION`
 
    
