@@ -1,10 +1,11 @@
 import {useState} from "react";
 import img1 from "../../images/logo.jpg";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header=()=>{
 
-
+     const onStatus=useOnlineStatus();
     const [btnChange,setBtnChange]=useState("login");  ///default value of state_variable btn_change;
 
     return (
@@ -15,6 +16,7 @@ const Header=()=>{
            
 
             <div className="links">
+                <li>Online Status:{onStatus ? " ✅":" git 🔴"}</li>
                   <li><Link   to="/">home</Link></li>
                   <li><Link  to="/about">about</Link></li>
                   {/* <li><link href="">Sign-IN</link></li>

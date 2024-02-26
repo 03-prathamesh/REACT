@@ -3,7 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect  } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body=()=>{
@@ -33,6 +33,11 @@ const Body=()=>{
          setFilteredRestaurant(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
     }
 
+    const status=useOnlineStatus();
+    if(status===false){
+      return <h1>Looks Like You are Offline!! Please Check Your Internet Connection!!!!</h1>
+      
+    }
 
     //this is known as "CONDITIONAL-RENDERING"
     if(listOfRest.length===0){
