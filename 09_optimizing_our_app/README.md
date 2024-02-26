@@ -25,3 +25,33 @@
 - eg- lets say we want to create a hook for fetching the data from API, so the we create our custom hook for this also and the functionality of the hook is fetching the data from the API.
 - `we create custom hooks in react in the UTILS folder`, we create seperate file for the seperate hook in utils.
 - When creating custom hooks in React,always name the file exactly the same as the hook name.  `whenever you are creating custom hooks,always start with the word *use* with the small case.`then name of the hook. `this is the way for react to know if the function name is starting from small letter use that means it is a HOOk`
+- eg:
+```
+import { useEffect , useState } from "react";
+
+
+const useRestaurantMenu=(w)=>{
+
+    const [rest,setRest]=useState(null);
+
+    //fetchData
+    useEffect(()=>{
+        fetchData();
+    },[]);
+
+    const fetchData= async ()=>{
+         const data=await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.61610&lng=73.72860&restaurantId="+w+"&catalog_qa=undefined&submitAction=ENTER");
+         const json=await data.json();
+         setRest(json);
+
+    }
+    return rest;
+}
+
+export default useRestaurantMenu;
+
+```
+
+```
+ const restMenuInfo=useRestaurantMenu(w);    //we are calling(using ) the custom hook here for fetching the data , we dont worry about its implementation we just need to use its functionality which is fetchign the data , its functionality is defined or implemented(code of that functionality of hook is written)in the useRestaurantMenu.js file under utils folder.
+```

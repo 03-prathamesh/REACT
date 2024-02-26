@@ -1,7 +1,7 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import { useEffect,useState } from "react";
-
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 
 
@@ -11,24 +11,30 @@ const Restaurant_menu=()=>{
     //console.log(params.w);
     //we are diretly destructuring on fly, instead of writing params.w i can write direcyly w to access this
     const {w}=useParams();
-    console.log(w);
+    // console.log(w);
  
+   const restMenuInfo=useRestaurantMenu(w);    //we are calling(using ) the custom hook here for fetching the data , we dont worry about its implementation we just need to use its functionality which is fetchign the data 
+
+
     // lets pss this w in URL
-    const [restMenuInfo,setRestMenuInfo]=useState(null);
 
-    useEffect(()=>{
-          fetchMenu();
-    },[])
+    //now following fetching of data functionality out custom hook  useRestaurantMenu is doing
+
+    // const [restMenuInfo,setRestMenuInfo]=useState(null);
+
+    // useEffect(()=>{
+    //       fetchMenu();
+    // },[])
     
-    const fetchMenu= async()=>{           //asynnc function FetchData()
+    // const fetchMenu= async()=>{           //asynnc function FetchData()
 
-        const data=await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.61610&lng=73.72860&restaurantId="+w+"&catalog_qa=undefined&submitAction=ENTER");
-        const json_data=await data.json();
-        console.log(json_data);
-        // console.log(json_data.data.cards[0].card.card.info.name);
+    //     const data=await fetch();
+    //     const json_data=await data.json();
+    //     console.log(json_data);
+    //     // console.log(json_data.data.cards[0].card.card.info.name);
       
-        setRestMenuInfo(json_data);
-    }
+    //     setRestMenuInfo(json_data);
+    // }
 
  
     // lets destructure the information from API
@@ -42,7 +48,7 @@ const Restaurant_menu=()=>{
          </div>
         )
      }
-
+//bydefault above dont get false below wil get execute , if abouvte get true then below will not get
 
 
      console.log(restMenuInfo);
