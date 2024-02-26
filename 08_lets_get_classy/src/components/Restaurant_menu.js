@@ -45,11 +45,11 @@ const Restaurant_menu=()=>{
 
 
 
-    
-     const{name,cuisines,costForTwoMessage,cloudinaryImageID}=restMenuInfo.data.cards[0].card.card.info;
+     console.log(restMenuInfo);
+     const{name,cuisines,costForTwoMessage,cloudinaryImageID}=restMenuInfo.data.cards[2].card.card.info;
 //    console.log(name);
     //  for menu
-     const{itemCards}=(restMenuInfo.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card);
+     const{itemCards}=(restMenuInfo.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card);
     //  console.log(itemCards);
      return(
         <div>
@@ -63,7 +63,7 @@ const Restaurant_menu=()=>{
             <h3><li>{itemCards[2].card.info.name}-{itemCards[2].card.info.price}</li></h3> 
             <h3><li>{itemCards[3].card.info.name}-{itemCards[3].card.info.price}</li></h3>
             instead of this , do the following  */}
-            <ul>
+            {<ul>
                 {itemCards.map((item)=>(
                     <li key={item.card.info.id}>
                         {item.card.info.name}
@@ -72,7 +72,7 @@ const Restaurant_menu=()=>{
                 ))}
 
                 
-            </ul>
+            </ul> }
             
 
         </div>
