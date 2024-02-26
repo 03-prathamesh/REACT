@@ -14,6 +14,6 @@
 
 **Custom-Hooks:**
 - `React hooks are predefined utility functions provided by the React library. These functions are already defined(code of that perticaular hook is already written in the library itseld) within the react-library, and we simply import and use them(use spec functionality of that specific perticular hook ) in our code without the need to create or define them ourselves`
-- we dont have to worry about the implementation(how the logic og this hook is implemented or created using code or how the code for this hook is written or defined) of the react-hooks , this are already implemented or defined(code) in the react-library itseld with .js file, we simple use the functionality of the specific hook by just importing it in our code from react(react-library).
+- we dont have to worry about the implementation(how the logic og this hook is implemented or created using code or how the code for this hook is written or defined or how this hook is created) of the react-hooks , this are already implemented or defined(code) in the react-library itseld with .js file, we simple use the functionality of the specific hook by just importing it in our code from react(react-library).
 - `Hooks are special java-script functions which are just given to us by react(we dont have to write code of that, we just use it wehenevr we want, react has already defined that hook), their are few hooks like useparamsm, useState()`
 - custom hooks means `we can create our own Custom Hooks`
