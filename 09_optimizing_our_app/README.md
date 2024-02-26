@@ -59,3 +59,9 @@ export default useRestaurantMenu;
 **How hooks are working behind the scenes:**
 - hooks(take example of useParams here) are simple js utiliity functions are written by some developers of `react-router-dom` or `react` library inside `react-library` or inside `react-router-dom library` and they would have written some logic to get url params and give it back, and developers of react library make these hooks as open-source(they export it and put it on the npm so that the world can use it) so that anyone can import it from react or react-router-dom library and they can use the functionality of spec hook for the specific purpose.(without  writing the implemenetion logic  or code  for functionality of  that hook or without defining it or without needing to write the implementation logic themselves.)
 
+**why we write use before any custom hook**
+- We prefix "use" before custom hooks to adhere to the React's convention, indicating that the function is a hook and should follow the rules of Hooks. This naming convention helps React distinguish between regular functions and hooks, ensuring proper functionality and adherence to Hooks' guidelines when used in components. It also enhances code readability, making it clear to other developers that the function is intended to be used as a hook within React components.
+
+
+-  `Additionally, this naming convention enhances modularity, enabling developers to easily identify and manage hooks separately from other functions, facilitating code organization and maintenance`
+
