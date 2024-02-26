@@ -16,7 +16,7 @@ const Header=()=>{
            
 
             <div className="links">
-                <li>Online Status:{onStatus ? " ✅":" git 🔴"}</li>
+                <li>Online Status:{onStatus ? " ✅":"  🔴"}</li>
                   <li><Link   to="/">home</Link></li>
                   <li><Link  to="/about">about</Link></li>
                   {/* <li><link href="">Sign-IN</link></li>
