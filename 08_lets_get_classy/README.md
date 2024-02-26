@@ -212,4 +212,4 @@ const[count2]=useState(1);  //initital valie of count2
   - components get updated on UI or DOM  (dom updates) in commit-phase.react is first doing the render-phase for all the children components then do the commit phase for all the components
   - `after all the render phase of all the child as well as parent component get happened and then the commit phase get happened. THIS IS THE OPTIMIZATION OF REACT. this process helps react to optimize the performance of REACT-APPLICATION`
 
-   
+![Alt Text](https://raw.githubusercontent.com/03-prathamesh/REACT/main/08_lets_get_classy/images/lifecycle.png)
