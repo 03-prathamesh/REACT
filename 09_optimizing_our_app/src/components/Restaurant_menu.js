@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect,useState } from "react";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
-
+// Restaurant_menu has single mejor responsibility- displaying the data
 
 const Restaurant_menu=()=>{
     // const params=useParams();  it will give the valur of :w(what user has typed(eg 123) in url for this dynamic routing)
