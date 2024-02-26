@@ -12,8 +12,13 @@
 - this are the important things that we get if we follow the `single-responsibility principle`
 
 
-**Custom-Hooks:**
+**Hooks:**
 - `React hooks are predefined utility functions provided by the React library. These functions are already defined(code of that perticaular hook is already written in the library itseld) within the react-library, and we simply import and use them(use spec functionality of that specific perticular hook ) in our code without the need to create or define them ourselves`
 - we dont have to worry about the implementation about the specific functionality of the spec hook like how this hook is fetching the data, where is the code for that hook is written so that he fetched the data(how the logic og this hook is implemented or created using code or how the code for this hook is written or defined or how this hook is created) of the react-hooks , this are already implemented or defined(code for(of) the functionality of the spec hook or code of that sepec hook is already written) in the react-library itseld with .js file, we simple use the functionality of the specific hook by just importing it in our code from react(react-library). eg- useEffect() hook.
 - `Hooks are special java-script functions which are just given to us by react(we dont have to write code of that, we just use it wehenevr we want, react has already defined that hook), their are few hooks like useparamsm, useState()`
+
+**Custom-hooks:**
 - custom hooks means `we can create our own Custom Hooks`
+- eg- lets say we want to create a hook for fetching the data from API, so the we create our custom hook for this also and the functionality of the hook is fetching the data from the API.
+- `we create custom hooks in react in the UTILS folder`, we create seperate file for the seperate hook in utils.
+- When creating custom hooks in React,always name the file exactly the same as the hook name.  `whenever you are creating custom hooks,always start with the word *use* with the small case.`then name of the hook. `this is the way for react to know if the function name is starting from small letter use that means it is a HOOk`
