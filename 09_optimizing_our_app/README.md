@@ -113,8 +113,10 @@ i will be importing my Grocery component using this lazy function, this lazy fun
     - we use suspence to handle this error.`Suspence`is a component that comes from thte react library. wrap our component (<Grocery/>) into Suspence component. like- <Supence fallback={jsx}><Grocery/><Suspence/>
     - meanwhile our Grocery component is begin loaded, this react is showing the jsx on the webpage for 2 sec(if it takes 2sec to loead Grocery) which is defined in the fallback of Suspence
     - `This lazy loading can make your large sccale application very fast , optimized and performant ,lightweight.--------this type of question is going to ask in interview that how can you make your react-App optimize`
-    - `To reduce the bundle size(of index.js single main bundle file which can be loaded on the webpage or loads our whole application on webpage) we do this code splitting`
+    - `To reduce the bundle size(of index.js single main bundle file which can be loaded on the webpage or loads our whole application on webpage) so that it take less time to load our webpage , and make our web application performant we do this code splitting`
+    - `Lazy loading is done to optimize performance by loading only the necessary code when it's needed, reducing initial load times. This approach improves user experience by minimizing resource usage and enhancing page responsiveness, especially in large-scale applications with numerous components.`
     - -------imp: `when you use this dynamic loaidng or lazy loading , all the code does not come at ones or all the code does not get loaded on the webpage at ones, it will only come when it is requested, like home componet get loaded first becaus initial webpage and if we want grocery page , it get loaded dynamically on the webpage as Diff BUNDLE whenever we want it(required)`
+    - i can do the lazy loading for `About page also`
 
 
 **loading code on webpage:**
