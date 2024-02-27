@@ -72,6 +72,70 @@ export default useRestaurantMenu;
 - `bundler makes one js file of thousands of components(diff files).`
 
 - **The problem here is size of this 1 JS file(which bundler has made by bundling all other files(cmpponents) into single files) has increases alot , it will decreases performance of your app liek your home will take more time to load----HOW CAN WE OPTIMIZE THIS? below is solution**
-**Chunking or Code-splittinng or Dynamic bunndling**
+**Chunking or Code-splittinng or Dynamic bunndling or Lazy-Loading**
 - `Break Down your Application into SMALLER PIECES(smaller js files)`
 - `we will make smaller bundles of these files. this process is known as "dynamic bundling"`
+- `Code splitting in React is a technique used to split your application's JavaScript bundle into smaller chunks, allowing you to load only the code needed for a particular part of your application when it's needed. Instead of loading the entire application bundle upfront, code splitting dynamically loads additional code as users navigate through the application.This approach improves performance by reducing initial load times and optimizing resource usage. It's particularly useful in large-scale applications where loading all code upfront would result in longer load times and poorer user experience`
+- Dynamic bundling in React is used for several reasons:
+   - `Optimized Performance: By loading only the required code for each specific user interaction, dynamic bundling optimizes resource usage, leading to faster load times and improved overall performance. This is particularly crucial for large-scale applications with complex codebases.`
+
+   - `Code Splitting: React applications often employ code splitting to split the application into smaller chunks, which are loaded on demand. Dynamic bundling complements code splitting by dynamically bundling together the necessary code chunks at runtime, based on user interactions or application state`.
+
+**Lazy-Loading:**
+   - exxample- suppose in our food-ordering app we have grocery component(consider it is big component ). and it has lot of child components inside it, about is also another component(big) in our app , but cconsider her grocery for example
+   - this grocery code is still inside my bundle(one js file which parcel has ccreated by bundlingg(merging) all other files or components into this single js files). even if i dont click on grocery(link tag) still it is loaded or has in the bundler(one js file).
+   - `I want to logically distribute my application that my Grocery and all the components of Grocery should come from DIfferent Bundle.`
+     - lets see how we can do that , how we ccan create seperate bundle for grocery. `I will not import my Grocery component in App.js directly , i will import my Grocery component using LAZY-LOADING.`This means you don't include the Grocery component in the initial bundle. you will include or import the grocery component whenever required in bundler
+     - whenever our app will load initially on webpage(home page will load on UI first), i will not load code for grocery, `only when i go to grocery page, then only that grocery code will be there in our App. this is known as LAZY-LOADING`
+     - This is lazy-loading in action. It ensures that only the necessary code is loaded when needed, improving performance by reducing the initial load time.
+     - ` lazy-loading allows you to split your application into separate bundles, with each section (like Grocery) being loaded only when it's required, leading to faster initial load times and better performance overall.`
+
+
+
+**loading code on webpage:**
+- Loading the necessary code is closely related to bundling because bundling is the process of packaging multiple files or modules together into a single file (or multiple files) for efficient delivery to the browser.
+- Loading components refers to the process of bringing in the necessary code for a specific part of your application when it's needed, rather than loading it all at once when the application starts. This is typically done to improve performance and reduce initial load times.
+- When we talk about loading the necessary code, it means that we only want to send the code that is required for a particular part of the application to the user's browser. Bundling helps with this process by allowing us to group related code together.
+
+- For example, if your application has different sections like Home, About, and Contact, each with its own JavaScript files containing the necessary components and functionality, bundling allows us to combine these files into separate bundles. Then, when a user visits a specific section, only the bundle containing the code for that section is loaded.
+
+- In short, bundling ensures that the necessary code for each part of the application is packaged together efficiently, making it easier to load only the relevant code when needed, thus improving performance and user experience.
+- Imagine you have a large application with various sections like Home, Grocery, and Profile. To optimize performance, you want to load the code for each section(components) separately on the browser or webpage. You decide to use lazy-loading, which means the code for a section is only loaded when that section is accessed by the user.
+
+
+**bundlinf process and how it loadded on webpage**
+- Loading components refers to the process of bringing in the necessary code for a specific part of your application when it's needed, rather than loading it all at once when the application starts. This is typically done to improve performance and reduce initial load times. 
+- When components are loaded dynamically, bundling ensures that only the necessary code for each component is bundled together. This means that when a user interacts with a specific part of the application, only the bundle containing the code for that particular component or feature is fetched and loaded. As a result, unnecessary code is not loaded upfront, leading to faster initial load times and improved performance.
+- In summary, bundling enables the loading of components on-demand by organizing related code into separate bundles, thereby enhancing the performance of web applications.
+- exaample:
+```
+Imagine you have a large e-commerce application with various sections like Home, Products, and Cart. One of the sections is Grocery. Instead of loading all code upfront, you decide to split your codebase into separate bundles for each section.
+
+Here's how it works with bundling and lazy-loading:
+
+During the build process, your bundler (like Webpack) creates separate bundles for each section of your application. So, you have a bundle for Home, another for Products, one for Cart, and another for Grocery.
+
+When a user visits your website, only the initial bundle containing the code for the Home page is loaded. This keeps the initial load time fast.
+
+As the user navigates to different sections, the corresponding bundles are fetched and loaded dynamically. For instance, when the user clicks on the "Grocery" link, the bundle containing the code for the Grocery section is fetched and loaded at that moment. This is lazy-loading in action.
+
+Bundling helps optimize this process by ensuring that only the necessary code for each section is included in its respective bundle. This improves performance by reducing the amount of code that needs to be loaded initially and allows for more efficient delivery of code chunks as needed.
+
+In summary, bundling your code into separate bundles for each section of your application allows for efficient lazy-loading, where only the necessary code is fetched and loaded when it's needed, leading to better performance and user experience.
+```
+
+- alternative for above in short
+```
+Imagine you have a large e-commerce application with various sections like Home, Products, and Cart. One of the sections is Grocery. Instead of loading all code upfront, you decide to load the code for the Grocery section only when the user navigates to that part of the application.
+
+For example:
+
+Initially, when the user visits the website, only the code for the Home page is loaded.
+When the user clicks on the "Grocery" link to view grocery items, then the code specifically related to the Grocery section is fetched and loaded dynamically.
+This lazy-loading approach ensures that only the necessary code for the Grocery section is loaded when the user needs it, improving performance and reducing initial load times.
+In summary, lazy-loading the Grocery component means that its code is fetched and loaded only when the user accesses the Grocery section of the application, rather than loading it all at once when the application starts.
+
+```
+
+- `Bundling refers to the process of combining multiple JavaScript files, along with their dependencies, into a single file or a set of files known as bundles. These bundles contain the necessary code for different parts of the application. When a user accesses the application in their browser, these bundles are delivered efficiently over the network and loaded into the browser's memory. This approach optimizes the loading process by reducing the number of HTTP requests and minimizing the time required to fetch and parse the code, ultimately improving the application's performance.`
+- `Bundling refers to the process of combining multiple JavaScript files, along with their dependencies, into a single file or a set of files known as bundles. These  diff bundles contain the necessary code for different parts(components) of the application. When a user accesses a specific component within the application in their browser, the bundle containing the merged code of their child components for that component is efficiently delivered over the network and loaded into the browser or the webpage. This approach optimizes the loading process by reducing the number of HTTP requests and minimizing the time required to fetch and parse the code, ultimately improving the application's performance.`

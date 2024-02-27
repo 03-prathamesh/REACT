@@ -11,6 +11,7 @@ import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 // these all 3 are components provides by the react-router-dom library
 import Error from "./components/Error";
 import Restaurant_menu from "./components/Restaurant_menu";
+import Grocery from "./components/Grocery";
 // lets create a functional component
 
 
@@ -114,6 +115,10 @@ const appRouter=createBrowserRouter([
                     path:"/restaurants/:w",       //here : is used for dynamic routing after : , whetever you type it will redirect to the Restaurant_menu page or component, and instead of w you can use any variable_name 
                     element:<Restaurant_menu/>
                 },  
+                {
+                    path:"/grocery",
+                    element:<Grocery/>
+                },
 
 
 
