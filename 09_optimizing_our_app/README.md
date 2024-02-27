@@ -90,6 +90,29 @@ export default useRestaurantMenu;
      - This is lazy-loading in action. It ensures that only the necessary code is loaded when needed, improving performance by reducing the initial load time.
      - ` lazy-loading allows you to split your application into separate bundles, with each section (like Grocery) being loaded only when it's required, leading to faster initial load times and better performance overall.`
       - Lazy loading is like fetching groceries only when you need them. In web development, it means loading certain parts of a website only when the user interacts with them, rather than loading everything at once.each section or component loads only when the user wants to see it, making the app feel faster and more responsive.
+     
+```
+import {lazy} from "react";  //lazy is a fucntion which react libray or package provides us, we just need to import it from react (include in our project or file)
+
+const Grocery = lazy(()=>import(path of the grocery in your file/folder structre of react));
+
+//this import is a function and it taked the path of my grocery component.("./components/Grocery");
+
+now i will not import my grocery like following
+// import Grocery from "./components/Grocery";
+
+i will be importing my Grocery component using this lazy function, this lazy function comes from react library and it takes the callback function and this callBack function usess this function IMPORT and impot takes my Grocery path where Grocery component file is created.
+
+```
+- `after this, the one js  file(parcel has bundles all the diff files or components into this single file) - index.js(which bunder has made this ) does not have code for grocery component, it has not loaded the code for Grocery component. if i go or click on grocery page, look at network call , we will get new JS file which is the  bundle of this grocery component, means it parcel has created a one single file inside that file it has merged or packaged or bundles the all the child component or diff. seperate files or components of this grocery component` . this 2 files are bundles.
+
+- we now splitted our components into 2 js BUNDLES.now grocery has its own BUNDLE and main bundle(index.js)is seperate. main bundle does not have code for grocery component but grocery bundle(grocery.js) has its own grocery code.
+- i am loading the grocery code on demand on the webpage or browser.
+  - **suspence:**
+      - as soon as i click on the Grocery page, it will take some time to fetch the data of grocery, at that perticular time `that middle state(react try to render grocery and it is not there) that causes that the ERROR`.
+    - we use suspence to handle this error.`Suspence`is a component that comes from thte react library. wrap our component (<Grocery/>) into Suspence component. like- <Supence fallback={jsx}><Grocery/><Suspence/>
+    - meanwhile our Grocery component is begin loaded, this react is showing the jsx on the webpage for 2 sec(if it takes 2sec to loead Grocery) which is defined in the fallback of Suspence
+    - `This lazy loading can make your large sccale application very fast , optimized and performant ,lightweight.--------this type of question is going to ask in interview that how can you make your react-App optimize`
 
 
 
