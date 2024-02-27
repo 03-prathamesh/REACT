@@ -114,6 +114,7 @@ i will be importing my Grocery component using this lazy function, this lazy fun
     - meanwhile our Grocery component is begin loaded, this react is showing the jsx on the webpage for 2 sec(if it takes 2sec to loead Grocery) which is defined in the fallback of Suspence
     - `This lazy loading can make your large sccale application very fast , optimized and performant ,lightweight.--------this type of question is going to ask in interview that how can you make your react-App optimize`
     - `To reduce the bundle size(of index.js single main bundle file which can be loaded on the webpage or loads our whole application on webpage) we do this code splitting`
+    - -------imp: `when you use this dynamic loaidng or lazy loading , all the code does not come at ones or all the code does not get loaded on the webpage at ones, it will only come when it is requested, like home componet get loaded first becaus initial webpage and if we want grocery page , it get loaded dynamically on the webpage as Diff BUNDLE whenever we want it(required)`
 
 
 **loading code on webpage:**
