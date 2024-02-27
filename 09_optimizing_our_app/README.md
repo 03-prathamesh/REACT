@@ -65,3 +65,13 @@ export default useRestaurantMenu;
 
 -  `Additionally, this naming convention enhances modularity, enabling developers to easily identify and manage hooks separately from other functions, facilitating code organization and maintenance`
 
+**when we build(develop) large scale applications which have thousands of components, and if we want performance of that large scale application to be good, How to make it performant?**
+- parcel(bundler), the basic job of bundler is to bundle our applications- `It means it takes all your files and make it into one. ie it bundles all your diff.files into one file.`
+- if you go to `dist`folder you will see, this parcel(bundler) will bundle all these files and `generate one single JS file. it will bundle all the ffiles into this one js file.and it will give this one JS file to the BROWSER.and browser loads that page on the UI`
+- all your webpage code is pressent in one JS File which your parcel(bundler) has made
+- `bundler makes one js file of thousands of components(diff files).`
+
+- **The problem here is size of this 1 JS file(which bundler has made by bundling all other files(cmpponents) into single files) has increases alot , it will decreases performance of your app liek your home will take more time to load----HOW CAN WE OPTIMIZE THIS? below is solution**
+**Chunking or Code-splittinng or Dynamic bunndling**
+- `Break Down your Application into SMALLER PIECES(smaller js files)`
+- `we will make smaller bundles of these files. this process is known as "dynamic bundling"`
