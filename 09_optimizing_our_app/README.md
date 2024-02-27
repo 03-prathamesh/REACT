@@ -113,7 +113,7 @@ i will be importing my Grocery component using this lazy function, this lazy fun
     - we use suspence to handle this error.`Suspence`is a component that comes from thte react library. wrap our component (<Grocery/>) into Suspence component. like- <Supence fallback={jsx}><Grocery/><Suspence/>
     - meanwhile our Grocery component is begin loaded, this react is showing the jsx on the webpage for 2 sec(if it takes 2sec to loead Grocery) which is defined in the fallback of Suspence
     - `This lazy loading can make your large sccale application very fast , optimized and performant ,lightweight.--------this type of question is going to ask in interview that how can you make your react-App optimize`
-
+    - `To reduce the bundle size(of index.js single main bundle file which can be loaded on the webpage or loads our whole application on webpage) we do this code splitting`
 
 
 **loading code on webpage:**
