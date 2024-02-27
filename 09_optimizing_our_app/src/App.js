@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import img1 from "../images/logo.jpg"
 import im2 from "../images/healthy-food.webp"
@@ -11,7 +11,7 @@ import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 // these all 3 are components provides by the react-router-dom library
 import Error from "./components/Error";
 import Restaurant_menu from "./components/Restaurant_menu";
-import Grocery from "./components/Grocery";
+// import Grocery from "./components/Grocery";
 // lets create a functional component
 
 
@@ -88,6 +88,9 @@ const AppLayout=()=>{
 
 // children-routing
 
+const Grocery=lazy(()=>import("./components/Grocery"));
+
+
 const appRouter=createBrowserRouter([
 
         {
@@ -117,7 +120,7 @@ const appRouter=createBrowserRouter([
                 },  
                 {
                     path:"/grocery",
-                    element:<Grocery/>
+                    element:<Suspense fallback={<h1>Loading the page , wait for secc</h1>}><Grocery/></Suspense>
                 },
 
 
