@@ -89,6 +89,7 @@ export default useRestaurantMenu;
      - whenever our app will load initially on webpage(home page will load on UI first), i will not load code for grocery, `only when i go to grocery page, then only that grocery code will be there in our App. this is known as LAZY-LOADING`
      - This is lazy-loading in action. It ensures that only the necessary code is loaded when needed, improving performance by reducing the initial load time.
      - ` lazy-loading allows you to split your application into separate bundles, with each section (like Grocery) being loaded only when it's required, leading to faster initial load times and better performance overall.`
+      - Lazy loading is like fetching groceries only when you need them. In web development, it means loading certain parts of a website only when the user interacts with them, rather than loading everything at once.each section or component loads only when the user wants to see it, making the app feel faster and more responsive.
 
 
 
