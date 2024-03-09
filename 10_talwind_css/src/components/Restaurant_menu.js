@@ -52,10 +52,10 @@ const Restaurant_menu=()=>{
 
 
      console.log(restMenuInfo);
-     const{name,cuisines,costForTwoMessage,cloudinaryImageID}=restMenuInfo.data.cards[2].card.card.info;
+     const{name,cuisines,costForTwoMessage,cloudinaryImageID}=restMenuInfo.data.cards[0].card.card.info;
 //    console.log(name);
     //  for menu
-     const{itemCards}=(restMenuInfo.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card);
+     const{itemCards}=(restMenuInfo.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card);
     //  console.log(itemCards);
      return(
         <div>

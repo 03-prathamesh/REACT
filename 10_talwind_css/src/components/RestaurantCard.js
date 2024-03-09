@@ -19,10 +19,10 @@ const {restdata,key}=props;
 
 return (
 
-   <div className="res-card">
+   <div className="m-4 p-4 w-[230px]  bg-gray-200">
      
        <img
-          className="res-img" 
+          className="rounded-lg h-[180px] w-[220px]" 
           src={CDN_URL + restdata.info.cloudinaryImageId}
        />
        {/* <h3>Meghana Foods</h3>
@@ -33,10 +33,10 @@ return (
         <h4>{props.cuisine}</h4>
         <h5>4.3 stars</h5>
         <h5>38 min</h5> */}
-        <h2>{restdata.info.name}</h2>
+        <h2 className="font-bold py-2 text-lg">{restdata.info.name}</h2>
          <h4>{restdata.info.avgRating} Stars</h4>
          <h4>{restdata.info.costForTwo}</h4>
-          <h4>{restdata.id}Hi</h4>
+          <h4>{restdata.id}</h4>
         <p>{restdata.info.cuisines.join(", ")}</p>
 
     

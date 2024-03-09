@@ -56,15 +56,15 @@ const Body=()=>{
    
        <div className="body">
    
-            <div className="filter">
+            <div className="flex border boder-solid items-center h-[100px]   ">
                 <div className="searchs">
-                  <input type="text"  className="s-box" value={searchText} onChange={(e)=>{
+                  <input type="text"  className="m-4 p-0.6 border border-solid border-black" value={searchText} onChange={(e)=>{
                      // filter the restaurant cards & update the UI
                      setSearchText(e.target.value);
                      // console.log(searchText);
 
                   }}/> 
-                  <button onClick={()=>{
+                  <button  className="px-4 py-0.4 bg-yellow-400 mr-12 rounded-lg" onClick={()=>{
                      // console.log(searchText);
                      const filterRestaurants=  listOfRest.filter(
                         // (res)=>res.info.name===searchText it  exact name 
@@ -73,17 +73,18 @@ const Body=()=>{
                      setFilteredRestaurant(filterRestaurants);
                   }}>Search</button>
                 </div>
-               <button
-                className="Filter-btn"
+                <div> <button
+                className="px-4 py-0.4 bg-yellow-400 mr-12 rounded-lg"
                 onClick={()=>{
                   const filtered_list=listOfRest.filter(
                      (restsss)=>restsss.info.avgRating >= 4.5
                   );
                   setFilteredRestaurant(filtered_list);
                 }}
-                >Top-Rated Restuarants</button>
+                >Top-Rated Restuarants</button></div>
+              
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap ">
                
    
    
