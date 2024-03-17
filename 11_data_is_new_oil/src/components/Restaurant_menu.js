@@ -64,16 +64,16 @@ const Restaurant_menu=()=>{
     //  restMenuInfo.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards
     const categories=restMenuInfo.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards.filter(c=>c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
     console.log(categories);
-
-
+    
+    // const prev_index=0;
      return(
-        <div >
+        <div >  
             <h1 className="text-center font-bold my-5 text-2xl">{name}</h1>
             <h2 className="text-center ">{cuisines.join(",")}. {costForTwoMessage}</h2>
             {/* Categories accordians */}
             {
                 categories.map((category,index)=>(
-                    < ResCategory data={category?.card?.card} showItems={index===showIndex? true:false} setShowIndex={()=>setShowIndex(index)} />
+                    < ResCategory data={category?.card?.card} showItems={index===showIndex ? true:false}  setShowIndex={() => setShowIndex(prevIndex => prevIndex === index ? null : index)} />
                     
                 ))
             }

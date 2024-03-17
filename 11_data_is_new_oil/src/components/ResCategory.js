@@ -1,12 +1,12 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const ResCategory = ({ data,showItems,setShowIndex }) => {
+const ResCategory = ({ data,showItems,setShowIndex}) => {
   // console.log(data);
  const handleClick=()=>{
+      // Prev_index=1;
       setShowIndex();
-      
-    
+
  }
   
   return (
