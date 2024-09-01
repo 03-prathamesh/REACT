@@ -44,7 +44,7 @@ return (
    );
 };
 
-// Higher Order components
+// Higher Order components - this are used to enhance the component
 export const withPromotedLabel=(RestaurantCard)=>{
     return (props)=>{
         return (
